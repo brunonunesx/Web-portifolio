@@ -11,11 +11,24 @@
     font-weight: normal;
 }
 
+/* animaçoes */
+
+/* animação degrade */
+@keyframes degrade{
+    0%{
+        background-position-x: 0%;
+    }
+
+    100%{
+        background-position: 400%;
+    }
+}
+
 :root {
-    --cor3: #F2668B;
+    --cor0: #F2668B;
     --cor1: #2E6F92;
     --cor2: #41E1F2;
-    --cor0: #F2AC57;
+    --cor3: #F2AC57;
     --cor4: #A09999;
   
     --fonte-padrão: 'Nunito', sans-serif;
@@ -41,29 +54,83 @@ html{
 body{
     background-color: var(--cor1);
     color: white;
-    max-width: 1440px;
-    padding: 0px 5%;
+    padding: 0px 2%;
     margin: 0 auto;
-    background-color: var(--cor1);
 }
 
+/*Classes reutilizaveis */
+.btn {
+    font-weight: bolder;
+    border-radius: 100px;
+    padding: 5px 20px;
+    background: linear-gradient(45deg, var(--cor2),  var(--cor3),
+    var(--cor0));
+    background-size: 400% 100%;
+    animation: degrade 15s linear infinite alternate;
+    cursor: pointer;
+}
+
+span{
+    color: var(--cor3);
+}
+
+/* header */
 header{
-    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.3rem 0;
 }
 
-.logo > a {
-    display: flex;
-    align-items: center;
-    font: normal bold 35px var(--fonte-destaque);
-    background: linear-gradient(45deg, var(--cor2),  var(--cor3), var(--cor0));
+.logo{
+    font: normal bold 2.5rem var(--fonte-destaque);
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--cor3), var(--cor0), var(--cor2));
     background-size: 400% 100%;
-    animation: degrade 15s linear infinite alternate;
+    animation: degrade 30s linear infinite alternate;
 
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;    
 }
 
+.nav > a{
+    font-size: 1.2rem;
+    margin: 1rem;
+    color: white;
+}
 
+.nav > a:hover {
+    color: var(--cor2);
+}
+/* fim do header */
+
+/* section */
+section{
+    min-height: 100vh;
+    border: solid 1px var(--cor3); 
+    padding: 6rem 6rem 2rem; 
+}
+
+/* section home and about */
+.home, .about{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.home-content{
+
+}
+
+.home-img{
+    border-right: solid 0.6rem var(--cor3);
+    border-bottom: solid 0.6rem var(--cor3);
+        border-image: linear-gradient(135deg, var(--cor2), var(--cor3)) 1;
+   
+
+.home-img > img, .about-img > img{
+    width: 100%;
+
+}
