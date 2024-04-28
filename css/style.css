@@ -25,11 +25,11 @@
 }
 
 :root {
-    --cor0: #F2668B;
+    --cor4: #F2668B;
     --cor1: #2E6F92;
     --cor2: #41E1F2;
     --cor3: #F2AC57;
-    --cor4: #A09999;
+    --cor0: #A09999;
   
     --fonte-padrão: 'Nunito', sans-serif;
     --fonte-destaque: 'Quicksilver','cursive'
@@ -125,10 +125,16 @@ section{
 }
 
 .home-img{
-    border-right: solid 0.6rem var(--cor3);
-    border-bottom: solid 0.6rem var(--cor3);
-        border-image: linear-gradient(135deg, var(--cor2), var(--cor3)) 1;
-   
+    border-right: solid 0.6rem;
+    border-bottom: solid 0.6rem;
+    border-image: linear-gradient(135deg, transparent 50%, var(--cor2), var(--cor3)) 1;
+}
+
+.about-img{
+    border-right: solid 0.6rem;
+    border-bottom: solid 0.6rem;
+    border-image: linear-gradient(135deg, transparent 50%, var(--cor2), var(--cor3)) 1;
+}
 
 .home-img > img, .about-img > img{
     width: 100%;
