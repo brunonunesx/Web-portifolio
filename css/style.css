@@ -23,6 +23,39 @@
         background-position: 400%;
     }
 }
+/* animação texto animado */
+@keyframes texto {
+    0%, 20%{
+        content: "Front-end";
+    }
+    21%, 40%{
+        content: "Back-end";
+    }
+    41%,60%{
+        content: "Analíse de Dados";
+    }
+     61%, 80%{
+        content: "Jogos Digitais";
+     }
+     81%, 100%{
+        content: "DevOps.";
+     }
+}
+
+@keyframes cursor {
+    0%{
+        border-left: solid 2px var(--cor1);
+    }
+}
+
+@keyframes digita {
+    10%, 15%, 30%, 35%, 50%, 70%, 75%, 90%, 95%{
+        width: 0;
+    } 
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%,85%{
+        width: calc(100% + 12px);
+    }
+}
 
 :root {
     --cor4: #F2668B;
@@ -60,7 +93,8 @@ body{
 
 /*Classes reutilizaveis */
 .btn {
-    font-weight: bolder;
+    display: inline-block;
+    font-weight: 600;
     border-radius: 100px;
     padding: 5px 20px;
     background: linear-gradient(45deg, var(--cor2),  var(--cor3),
@@ -68,10 +102,46 @@ body{
     background-size: 400% 100%;
     animation: degrade 15s linear infinite alternate;
     cursor: pointer;
+    letter-spacing: 0.1rem;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.btn:hover{
+    box-shadow: 0 0 0 0.3rem var(--cor3);
+    color: var(--cor3);
 }
 
 span{
     color: var(--cor3);
+    font-family: var(--fonte-destaque);
+    font-weight: 300;
+}
+
+.text-animado > span{
+    position: relative;
+    font-family: var(--fonte-padrão);
+    font-weight: bolder;
+}
+
+.text-animado > span::before{
+    content: "";
+    color: var(--cor3);
+    animation: texto 20s infinite;
+
+}
+
+.text-animado > span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: solid 2px var(--cor3);
+    right: -10px;
+    animation: cursor .8s infinite, digita 20s steps(10) infinite;
+    width: calc(100% + 12px);
+    background-color: var(--cor1);
+
+
 }
 
 /* header */
@@ -108,19 +178,23 @@ header{
 section{
     min-height: 100vh;
     border: solid 1px var(--cor3); 
-    padding: 6rem 6rem 2rem; 
+    padding: 4rem 6rem 4rem;     
 }
 
+.skill > h2,
+.project > h2,
+.contact > h2{
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+/* final section  */
 /* section home and about */
 .home, .about{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-
-}
-
-.home-content{
 
 }
 
@@ -131,12 +205,138 @@ section{
 }
 
 .about-img{
-    border-right: solid 0.6rem;
+    border-left: solid 0.6rem;
     border-bottom: solid 0.6rem;
-    border-image: linear-gradient(135deg, transparent 50%, var(--cor2), var(--cor3)) 1;
+    border-image: linear-gradient(225deg, transparent 50%, var(--cor2), var(--cor3)) 1;
 }
 
 .home-img > img, .about-img > img{
     width: 100%;
+}
 
+.home-content, .about-content{
+    width: 45%;
+}
+
+.home-content > h1, .about-content >h1{
+    font-weight: 700;
+    line-height: 1.3;
+
+    font-size: 2.7rem;
+}
+
+.home-content > h3, .about-content > h3{
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.home-content > P, .about-content > P{
+    margin: 1.2rem;
+    text-align: justify;
+}
+
+.home-content > div{
+    margin-top: 1rem;
+}
+
+/* fim da  section home and about */
+/* section skill*/
+.skill-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.skill-container > .skill-box {
+    padding: 2rem 1rem 2.5rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: solid 0.15rem var(--cor0);
+    background-color: var(--cor0);
+    transition: 0.5s ease;
+}
+
+.skill-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 25rem;
+    margin: 2rem 0 1rem 2rem;
+}
+
+.skill-container > .skill-box:hover{
+    border-color: #F2AC57;
+    transform: scale(1.01);
+}
+
+.skill-img{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+
+}
+
+.skill-box > h3{
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.skill-box > p{
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* fim da section skill */
+/* section project */
+.project{
+}
+
+.portifolio-container{
+    display: grid;
+    gap: 1.2rem;
+}
+
+.portifolio-box{
+    position: relative;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0.6rem var(--cor2);
+    display: flex;
+    overflow: hidden;
+}
+
+.image{
+    width: 100px;
+    height: 300px;
+}
+.portifolio-box > img{ 
+    width: 100%;
+    transition: 0.5 ease;
+}
+
+.portifolio-box img:hover{
+    transform: scale(1.1);
+}
+
+.portifolio-box .portifolio-layer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, var(--cor2));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(30rem);
+    transition: 0.5s ease;
+}
+
+.portifolio-box:hover .portifolio-layer{
+    transform:translateY(0);
 }
