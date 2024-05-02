@@ -122,25 +122,6 @@ span{
     font-weight: bolder;
 }
 
-.text-animado > span::before{
-    content: "";
-    color: var(--cor3);
-    animation: texto 20s infinite;
-
-}
-
-.text-animado > span::after{
-    content: "";
-    position: absolute;
-    height: 100%;
-    border-left: solid 2px var(--cor3);
-    right: -10px;
-    animation: cursor .8s infinite, digita 20s steps(10) infinite;
-    width: calc(100% + 12px);
-    background-color: var(--cor1);
-
-
-}
 
 /* header */
 header{
@@ -190,7 +171,7 @@ section{
 .project > h2,
 .contact > h2{
     font-size: 2.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 /* final section  */
@@ -270,7 +251,7 @@ section{
 }
 
 .skill-container > .skill-box:hover{
-    border-color: #F2AC57;
+    border-color: var(--cor2);
     transform: scale(1.01);
 }
 
@@ -297,8 +278,6 @@ section{
 }
 /* fim da section skill */
 /* section project */
-.project{
-}
 
 .portifolio-container{
     display: grid;
@@ -306,6 +285,7 @@ section{
 }
 
 .portifolio-box{
+    margin-top: 1rem;
     position: relative;
     border-radius: 0.6rem;
     box-shadow: 0 0 0.6rem var(--cor2);
@@ -334,6 +314,7 @@ section{
     height: 100%;
     background: linear-gradient(transparent, var(--cor2));
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -344,23 +325,74 @@ section{
 
 .portifolio-box:hover .portifolio-layer{
     transform:translateY(0);
+
 }
 
-.meu-botao {
-    background-color: #4CAF50; /* Cor de fundo */
-    border: none; /* Sem borda */
-    color: white; /* Cor do texto */
-    padding: 15px 32px; /* Espaçamento interno */
-    text-align: center; /* Alinhamento do texto */
-    text-decoration: none; /* Sem decoração de texto */
-    display: inline-block; /* Exibição em linha */
-    font-size: 16px; /* Tamanho da fonte */
-    margin: 4px 2px; /* Margem */
-    cursor: pointer; /* Cursor do mouse */
-    border-radius: 10px; /* Raio do canto */
+.portifolio-layer > h4{
+    font-size: 1.8rem;
 }
 
-/* Efeito de hover */
-.meu-botao:hover {
-    background-color: #45a049; /* Nova cor de fundo no hover */
+.portifolio-layer > P{
+    margin: 0.2rem 0 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+    
+.portifolio-layer > a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(white);
+    border-radius: 50%;
+}
+
+.portifolio-layer > a > svg{
+    font-size: 1,2rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+/* fim da section project  */
+
+/* section formulario */
+
+form{
+    max-width: 45rem;
+    margin: 0.6rem auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  
+}
+
+form .input-box  input,
+form textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--cor0);
+    border-radius: 0.5rem;
+    margin: 0.4rem 0;
+}
+
+form textarea{
+    resize: none;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
