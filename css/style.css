@@ -59,10 +59,10 @@
 
 :root {
     --cor4: #F2668B;
-    --cor1: #2E6F92;
+    --cor1: #1f242d;
     --cor2: #41E1F2;
     --cor3: #F2AC57;
-    --cor0: #A09999;
+    --cor0: #323946;
   
     --fonte-padrão: 'Nunito', sans-serif;
     --fonte-destaque: 'Quicksilver','cursive'
@@ -88,28 +88,26 @@ body{
     background-color: var(--cor1);
     color: white;
     padding: 0px 2%;
-    margin: 0 auto;
 }
 
 /*Classes reutilizaveis */
 .btn {
     display: inline-block;
+    padding: 0.7rem 1.8rem;
+    background-color: var(--cor2);
+    border-radius: 2rem;
+    color: var(--cor1);
     font-weight: 600;
-    border-radius: 100px;
-    padding: 5px 20px;
-    background: linear-gradient(45deg, var(--cor2),  var(--cor3),
-    var(--cor0));
-    background-size: 400% 100%;
-    animation: degrade 15s linear infinite alternate;
-    cursor: pointer;
     letter-spacing: 0.1rem;
     transition: 0.3s ease;
-    color: white;
+    margin-top: 1.2rem;
 }
 
 .btn:hover{
-    box-shadow: 0 0 0 0.3rem var(--cor3);
-    color: var(--cor3);
+    box-shadow: 0 0 0.3rem;
+    background-color: inherit;
+    color: var(--cor2);
+    cursor: pointer;
 }
 
 span{
@@ -146,16 +144,23 @@ span{
 
 /* header */
 header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.3rem 0;
+    padding: 1.1rem;
+    z-index: 100;
+    background-color: var(--cor0)
 }
 
 .logo{
     font: normal bold 2.5rem var(--fonte-destaque);
+    margin-left: 1.3rem;
     cursor: pointer;
-    background: linear-gradient(135deg, var(--cor3), var(--cor0), var(--cor2));
+    background: linear-gradient(135deg, var(--cor3), var(--cor4), var(--cor2));
     background-size: 400% 100%;
     animation: degrade 30s linear infinite alternate;
 
@@ -339,4 +344,23 @@ section{
 
 .portifolio-box:hover .portifolio-layer{
     transform:translateY(0);
+}
+
+.meu-botao {
+    background-color: #4CAF50; /* Cor de fundo */
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto */
+    padding: 15px 32px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em linha */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 4px 2px; /* Margem */
+    cursor: pointer; /* Cursor do mouse */
+    border-radius: 10px; /* Raio do canto */
+}
+
+/* Efeito de hover */
+.meu-botao:hover {
+    background-color: #45a049; /* Nova cor de fundo no hover */
 }
