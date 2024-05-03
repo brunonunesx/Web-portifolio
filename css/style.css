@@ -117,7 +117,7 @@ span{
 }
 
 .social-media img{
-    width: 3.5rem;
+    width: 3rem;
 }
 
 
@@ -217,7 +217,7 @@ section{
 
 .home-content > h1, .about-content >h1{
     font-weight: 700;
-    line-height: 1.3rem;
+    line-height: 1.5rem;
     font-size: 2.7rem;
     margin: 1rem 0;
 }
