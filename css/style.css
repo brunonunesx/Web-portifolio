@@ -32,7 +32,7 @@
         content: "Back-end";
     }
     41%,60%{
-        content: "Analíse de Dados";
+        content: "Analise de Dados";
     }
      61%, 80%{
         content: "Jogos Digitais";
@@ -119,6 +119,8 @@ span{
 .social-media img{
     width: 3.5rem;
 }
+
+
 /* header */
 header{
     position: fixed;
@@ -144,14 +146,28 @@ header{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;    
 }
+.nav-responsive{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: var(--cor0);
+    font-size: 1.2rem;
+    color: white;
+    transition: 0,4s;
+}
 
 .nav > a{
     font-size: 1.2rem;
     margin: 1rem;
     color: white;
+    transition: 0,4s;
 }
 
-.nav > a:hover {
+.nav > a:hover, .nav-responsive > a:hover{
     color: var(--cor2);
 }
 /* fim do header */
@@ -159,7 +175,6 @@ header{
 /* section */
 section{
     min-height: 100vh;
-    border: solid 1px var(--cor3); 
     padding: 4rem 6rem 4rem;     
 }
 
@@ -202,9 +217,9 @@ section{
 
 .home-content > h1, .about-content >h1{
     font-weight: 700;
-    line-height: 1.3;
-
+    line-height: 1.3rem;
     font-size: 2.7rem;
+    margin: 1rem 0;
 }
 
 .home-content > h3, .about-content > h3{
@@ -212,6 +227,30 @@ section{
     font-size: 1.6rem;
 }
 
+.text-animado{ 
+}
+
+.text-animado span{
+    position: relative;
+    font-family: var(--fonte-destaque);
+}
+
+.text-animado  span::before{
+    content: "";
+    color: var(--cor3);
+    animation: texto 20s infinite;
+}
+
+.text-animado  span::after{
+    content: "";
+    position: absolute;
+    min-height: 100%;
+    border-left: 2px solid var(--cor3);
+    right: -10px;
+    animation: cursor .8s infinite , digita 20s steps(15) infinite;
+    width: calc(100% + 12px);
+    background-color: var(--cor1);
+}
 .home-content > P, .about-content > P{
     margin: 1.2rem;
     text-align: justify;
@@ -220,6 +259,8 @@ section{
 .home-content > div{
     margin-top: 1rem;
 }
+
+
 
 /* fim da  section home and about */
 /* section skill*/
@@ -403,7 +444,7 @@ footer{
     cursor: pointer;
 } 
 
-.bar1, .bar2 .bar3{
+.bar1, .bar2, .bar3{
     width: 2rem;
     height: 0.3rem;
     background-color: white;
@@ -435,7 +476,8 @@ footer{
         display: none;
     }
 
-    .nav-responsive{
+    .nav-responsive > a{
+        color: white;
         display: block;
         font-size: 1.2rem;
         margin: 0.5rem 0;
@@ -446,6 +488,7 @@ footer{
     }
 
     .home, .about{
+        margin-top: 2rem;
         flex-direction: column;
         gap: 1.2rem;
     }
@@ -462,7 +505,11 @@ footer{
     .home-content, .about-content{
         text-align: center;
     }
-
+    .home-content > h1, .about-content > h1{
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.3rem;
+    }
     .skill-container{
         flex-direction: column;
         align-items: center;
@@ -470,9 +517,6 @@ footer{
 
     .skill-box{
         width: 100%;
-    }
-    header{background-color: #41E1F2;
-    height: 100px;
     }
 }
 
@@ -486,8 +530,6 @@ footer{
     .skill-box{
         width: 70%;
     }
-
-    header{background-color: aquamarine;}
 }
 
 /* Mediun (md): Tablet */
@@ -499,21 +541,56 @@ footer{
         display: block;
     }
 
-    .nav-responsive{
+    .nav-responsive, .nav-responsive > a{
         display: none;
     }
 
-    .home, .about{}
-    header{background-color: orange;}
+    .home, .about{
+        flex-direction: row;
+        justify-content: space-evenly;   
+    }
+
+    .home-img, .about-img{
+        max-width: 35%;
+    }
+
+    .home-content, .about-content{
+        width: 60%;    
+    }
+
+    .skill-box{
+        width: 60%;
+        margin-bottom: 2rem;
+    }
+
+    .portifolio-container{
+        grid-template-columns: auto auto;
+    }
+
+    form .input-box input{
+        width: 49%;
+    }
 }
 
 /* Large (lg): notebook */
 @media (min-width: 992px) {
-    header{background-color: beige;}
+     .home-img, .about-img{
+        max-width: 35%;
+    } 
+
+    .skill-container{
+        flex-direction: row;
+        gap: 1.2rem;
+    }
 }
 
-@media (min-width: 1200px) {
-    header{background-color: red;}
+@media (min-width: 1200px) {   
+    .home-content > h1, .about-content > h1{
+     font-size: 2.7rem;
+    }
+    
+   .portifolio-container {
+    grid-template-columns: auto auto auto;
+   }
 }
-
 /* fim media queries */
