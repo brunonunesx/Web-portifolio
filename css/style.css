@@ -227,8 +227,7 @@ section{
     font-size: 1.6rem;
 }
 
-.text-animado{ 
-}
+
 
 .text-animado span{
     position: relative;
@@ -409,7 +408,6 @@ form .input-box {
     justify-content: space-between;
     flex-wrap: wrap;
 
-  
 }
 
 form .input-box  input,
@@ -510,6 +508,7 @@ footer{
         font-weight: 700;
         line-height: 1.3rem;
     }
+
     .skill-container{
         flex-direction: column;
         align-items: center;
@@ -574,7 +573,7 @@ footer{
 
 /* Large (lg): notebook */
 @media (min-width: 992px) {
-     .home-img, .about-img{
+    .home-img, .about-img{
         max-width: 35%;
     } 
 
@@ -583,14 +582,14 @@ footer{
         gap: 1.2rem;
     }
 }
-
+/* telas maiores */
 @media (min-width: 1200px) {   
     .home-content > h1, .about-content > h1{
-     font-size: 2.7rem;
+        font-size: 2.7rem;
     }
     
-   .portifolio-container {
-    grid-template-columns: auto auto auto;
-   }
+    .portifolio-container {
+        grid-template-columns: auto auto auto;
+    }
 }
 /* fim media queries */
