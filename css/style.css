@@ -63,12 +63,11 @@
     --cor2: #41E1F2;
     --cor3: #F2AC57;
     --cor0: #323946;
-  
     --fonte-padrão: 'Nunito', sans-serif;
     --fonte-destaque: 'Quicksilver','Nunito'
-  }
-  
-  * {
+} 
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
