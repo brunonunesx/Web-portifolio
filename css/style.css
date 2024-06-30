@@ -34,12 +34,10 @@
     41%,60%{
         content: "MYSQL";
     }
-     61%, 80%{
-        content: "Jogos Digitais";
-     }
-     81%, 100%{
-        content: "DevOps.";
-     }
+    61%, 80%{
+        content: "Jogos Digitais";}
+    81%, 100%{
+        content: "DevOps."; }
 }
 
 @keyframes cursor {
